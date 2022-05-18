@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 import com.sun.tools.javac.Main;
 
+
+//First Operation that gets the number of coloumns a user wants to be generated, also promphs out the coloumns aswel
 public class GenerateCSV {
 	public static void main(String[] args) {
 
@@ -57,7 +59,7 @@ SecondOperation(); //put after do-while
 	
 	
 	
-	//RUns The Next Operation
+	//Second Operation behaves just as the first, only with row numbers TODO
 	
 	
 public static void SecondOperation() {
@@ -95,9 +97,9 @@ else if (yeschr == 'N' || yeschr == 'n') {
 } while(opr1 == true);
 	  }
 
-
-//System.out.println ("In total their will be" + customrownum + "Rows, And" + customcolnum "Coloumns, please enter your data so th eprogram can randomly generate");
-
+public static void ThirdOperation() {
+//System.out.println ("In total their will be" + getMethod() + "Rows, And" + customcolnum "Coloumns, please enter your data so th eprogram can randomly generate");
+}
 //Need to pass the variable between classes
 
 /*
