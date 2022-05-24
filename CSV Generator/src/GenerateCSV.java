@@ -6,9 +6,11 @@ import com.sun.tools.javac.Main;
 //First Operation that gets the number of coloumns a user wants to be generated, also promphs out the coloumns aswel
 public class GenerateCSV {
 	public static void main(String[] args) {
+		for (int i = 1; i < 3; i++) {
 		FirstOperation(0);
 		SecondOperation(0);
-		ThirdOperation();
+		ThirdOperation(0);
+		}
 	}
 	
 public static int FirstOperation(int customcolnum) {
@@ -52,7 +54,7 @@ do {
 			  
 			  //Quits this operation
 		}
-		
+		break;
 
 		
 
@@ -60,8 +62,8 @@ do {
 
 
 while(opr1 == true);
-//SecondOperation(0); //put after do-while
-return 0;
+
+return customcolnum;
 
 
 
@@ -69,7 +71,7 @@ return 0;
 	
 public static int SecondOperation(int customrownum) {
 
-boolean opr1 = false; //Re-uses this variable from previous operation
+boolean opr2 = false; //Re-uses this variable from previous operation
 
 do {
 
@@ -87,35 +89,36 @@ do {
 	
 if (yeschr == 'Y'|| yeschr == 'y') {
 	  System.out.println ("YOU HAVE ENTERED YES");
-	  opr1 = false;
+	  opr2 = false;
 	  
 	}
 
 else if (yeschr == 'N' || yeschr == 'n') {
 	  System.out.println ("YOU HAVE ENTERED NO");
-	  opr1 = true;
+	  opr2 = true;
 
 	  //Quits this operation
 }
+break;
 
-} while(opr1 == true);
-//ThirdOperation();
-return 1;
+} while(opr2 == true);
+
+return customrownum;
 }
 
-public static void ThirdOperation() {
-	//int customcolnum = 0;
-	//int customrownum = 0;
-	//customcolnum = FirstOperation(customcolnum);
-	//customrownum = SecondOperation(customrownum);
+public static int ThirdOperation(int opr3returnvar) {
+	int customcolnum = 0;
+	int customrownum = 0;
+	customcolnum = FirstOperation(customcolnum);
+	customrownum = SecondOperation(customrownum);
 //SecondOperation();
 //SecondOperation.customrownum();
-boolean opr1 = false; //Re-uses this variable from previous operation
+boolean opr3 = false; //Re-uses this variable from previous operation
 
 do {
 	
 	
-	System.out.println("THIRD OPERATION STUFF GOES HERE, CONTINUE YES/NO");	
+	System.out.println(customcolnum + "Colums and " + customrownum +  "rows, CONTINUE YES/NO");	
 	
 	Scanner yesnoscnr = new Scanner(System.in);	
 	char yeschr = yesnoscnr.next("Y|y|N|n").charAt(0);
@@ -123,19 +126,21 @@ do {
 	
 if (yeschr == 'Y'|| yeschr == 'y') {
 	  System.out.println ("YOU HAVE ENTERED YES");
-	  opr1 = false;
+	  opr3 = false;
+	  
 	  
 	}
 
 else if (yeschr == 'N' || yeschr == 'n') {
 	  System.out.println ("YOU HAVE ENTERED NO");
-	  opr1 = true;
+	  opr3 = true;
 
 	  //Quits this operation
 }
+break;
 
-} while(opr1 == true);
-
+} while(opr3 == true);
+return 0; 
 }
 
 //Do not return!!!! It breaks the operations Maybe
