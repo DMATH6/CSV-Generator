@@ -6,15 +6,16 @@ import com.sun.tools.javac.Main;
 //First Operation that gets the number of coloumns a user wants to be generated, also promphs out the coloumns aswel
 public class GenerateCSV {
 	public static void main(String[] args) {
-		for (int i = 1; i < 3; i++) {
 		FirstOperation(0);
 		SecondOperation(0);
-		ThirdOperation(0);
-		}
+		ThirdOperation();
 	}
+
+		
+	
 	
 public static int FirstOperation(int customcolnum) {
-	
+	 
 
 
 
@@ -22,7 +23,7 @@ public static int FirstOperation(int customcolnum) {
 		boolean opr1 = false;
 		
 	//This operation grabs the number of coloumns from the scanner	
-do {
+		while(opr1 == false) {
 		
 		//Valid data that can be inputed 
 		String customdatstr = "NULL";
@@ -44,7 +45,8 @@ do {
 		if (yeschr == 'Y'|| yeschr == 'y') {
 			  System.out.println ("YOU HAVE ENTERED YES");
 			  opr1 = false;
-			  
+			break;	
+			
 			}
 		
 		else if (yeschr == 'N' || yeschr == 'n') {
@@ -61,9 +63,9 @@ do {
 }
 
 
-while(opr1 == true);
 
 return customcolnum;
+
 
 
 
@@ -73,7 +75,7 @@ public static int SecondOperation(int customrownum) {
 
 boolean opr2 = false; //Re-uses this variable from previous operation
 
-do {
+while(opr2 == false) {
 
 	
 	
@@ -89,24 +91,25 @@ do {
 	
 if (yeschr == 'Y'|| yeschr == 'y') {
 	  System.out.println ("YOU HAVE ENTERED YES");
-	  opr2 = false;
-	  
+	  opr2 = true;
+	break;
+		
 	}
 
 else if (yeschr == 'N' || yeschr == 'n') {
 	  System.out.println ("YOU HAVE ENTERED NO");
 	  opr2 = true;
-
+	  
 	  //Quits this operation
 }
-break;
 
-} while(opr2 == true);
 
+} 
 return customrownum;
+
 }
 
-public static int ThirdOperation(int opr3returnvar) {
+public static void ThirdOperation() {
 	int customcolnum = 0;
 	int customrownum = 0;
 	customcolnum = FirstOperation(customcolnum);
@@ -115,7 +118,7 @@ public static int ThirdOperation(int opr3returnvar) {
 //SecondOperation.customrownum();
 boolean opr3 = false; //Re-uses this variable from previous operation
 
-do {
+while(opr3 == false) {
 	
 	
 	System.out.println(customcolnum + "Colums and " + customrownum +  "rows, CONTINUE YES/NO");	
@@ -127,6 +130,7 @@ do {
 if (yeschr == 'Y'|| yeschr == 'y') {
 	  System.out.println ("YOU HAVE ENTERED YES");
 	  opr3 = false;
+	  break;
 	  
 	  
 	}
@@ -134,15 +138,16 @@ if (yeschr == 'Y'|| yeschr == 'y') {
 else if (yeschr == 'N' || yeschr == 'n') {
 	  System.out.println ("YOU HAVE ENTERED NO");
 	  opr3 = true;
-
+	  
 	  //Quits this operation
 }
 break;
 
-} while(opr3 == true);
-return 0; 
 }
+return;
 
+}
+	
 //Do not return!!!! It breaks the operations Maybe
 //Need to pass the variable between classes
 //OLD CODE DONT USE!!
