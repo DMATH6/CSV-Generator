@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class GenerateCSV {
+public class GenerateCSVversion2 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
