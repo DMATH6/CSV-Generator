@@ -1,5 +1,7 @@
 import java.util.Scanner;
-
+import java.lang.reflect.Array;
+import java.util.Arrays;  
+import java.util.ArrayList;  
 public class GenerateCSV {
 
 	public static void main(String[] args) {
@@ -82,7 +84,7 @@ public class GenerateCSV {
 	while(opr3 == false) {
 		
 		
-		System.out.println(customcolnum + "Colums and " + customrownum +  "rows, CONTINUE YES/NO");	
+		System.out.println(customcolnum + " Colums and " + customrownum +  " rows, CONTINUE YES/NO");	
 		
 		Scanner yesnoscnr3 = new Scanner(System.in);	
 		char yeschr3 = yesnoscnr3.next("Y|y|N|n").charAt(0);
@@ -102,14 +104,47 @@ public class GenerateCSV {
 		  
 		  //Quits this operation
 	}
-	
-
-
-
-
-	
 	}
+	
+	
+	//INSERT 4TH OPERATION HERE: Inserts a row into a coloumn
+	int forthoploop = 0;
+
+	Scanner forthopscnr = new Scanner(System.in);
+    ArrayList<String> coldata = new ArrayList<String>();
+	
+	do {
+	System.out.println("Please enter your data for coloumn " + customcolnum);
+	//Scanner forthopscnr = Scanner(System.in);
+
+	
+	
+	coldata.add (forthopscnr.nextLine());
+	
+
+	  System.out.println (coldata.get(forthoploop));
+	  
+		forthoploop ++;
+	}
+	while(forthoploop != customcolnum);
+	 // System.out.println (Arrays.toString(coldata));
+		
+	
+	//Prints out all values entered into list
+	
+	int printoutloopvar = 0;
+
+	while  (printoutloopvar <= coldata.lastIndexOf(forthoploop));
+	{
+		 printoutloopvar ++;
+		 System.out.println (coldata.get(printoutloopvar));
+
+	}
+
 		}
 		}
+
 }
 }
+
+
