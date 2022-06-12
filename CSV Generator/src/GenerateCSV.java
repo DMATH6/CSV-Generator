@@ -15,6 +15,11 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.io.FileReader;
+import java.io.*;  
+import java.lang.Object;
+
+
 public class GenerateCSV {
 
 	public static void main(String[] args) {
@@ -120,7 +125,7 @@ while(opr3 == true) {
 }//Third Operation END
 
 
-//Sixth Operation: TODO
+//Sixth Operation
 
 ArrayList<String> coldata = new ArrayList<String>();
 ArrayList<ArrayList<String>> rowdata = new ArrayList<ArrayList<String>>();
@@ -135,6 +140,7 @@ for(sixoploop = 0; sixoploop <= customrownum;)
 
 
 		Scanner forthopscnr = new Scanner(System.in); //Having issues trying to close it
+		//forthopscnr.useDelimiter();
 		for(forthoploop = 0; customcolnum >= (forthoploop);){
 		System.out.println("Please enter your data for column " + (forthoploop +1) + " In row " + (sixoploop + 1));
 		coldata.add (forthopscnr.nextLine());
@@ -148,20 +154,39 @@ for(sixoploop = 0; sixoploop <= customrownum;)
 		coldata.clear();
 		++sixoploop;
 		rowdata.add(coldatacopy);
-	
+		
 }
-
+		
 	
 	
 	//Fifth Operation: Displays all data entered for the selected row
 	System.out.println('\n' + "				" + rowdata);
 	
 	
+	//Seventh Operation	
+	//CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
+	//TEST FOR NOW
+		    try {
+		      File myObj = new File("filename.txt");
+		      if (myObj.createNewFile()) {
+		        System.out.println("File created: " + myObj.getName());
+		      } else {
+		        System.out.println("File already exists.");
+		      }
+		    } catch (IOException e) {
+		      System.out.println("An error occurred.");
+		      e.printStackTrace();
+		    }  
 	
-	
-	
-	
-
+		    try {
+		        FileWriter myWriter = new FileWriter("filename.txt");
+		        myWriter.write("Files in Java might be tricky, but it is fun enough!");
+		        myWriter.close();
+		        System.out.println("Successfully wrote to the file.");
+		      } catch (IOException e) {
+		        System.out.println("An error occurred.");
+		        e.printStackTrace();
+		      }
 		
 
 
