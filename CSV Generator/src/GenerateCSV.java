@@ -20,10 +20,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 public class GenerateCSV {
 
-	void endOfProgram() {
-
-	}
-
 
 
 	public static void main(String[] args) {
