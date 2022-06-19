@@ -221,28 +221,18 @@ public class GenerateCSV {
 		//Seventh Operation	
 		//CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
 		//TEST FOR NOW 
-		/*
-			    try {
-			      File myObj = new File("filename.txt");
-			      if (myObj.createNewFile()) {
-			        System.out.println("File created: " + myObj.getName());
-			      } else {
-			        System.out.println("File already exists.");
-			      }
-			    } catch (IOException e) {
-			      System.out.println("An error occurred.");
-			      e.printStackTrace();
-			    }  
-		
-			    try {
-			        FileWriter myWriter = new FileWriter("filename.txt");
-			        myWriter.write("Files in Java might be tricky, but it is fun enough!");
-			        myWriter.close();
-			        System.out.println("Successfully wrote to the file.");
-			      } catch (IOException e) {
-			        System.out.println("An error occurred.");
-			        e.printStackTrace();
-			      }
+
+
+	    try {
+	        FileWriter myWriter = new FileWriter("GeneratedCSV.csv");
+	        myWriter.write(rowdata + System.lineSeparator().replace('[', ']')); //replace dosnt work
+	        myWriter.close();
+	        System.out.println("Successfully wrote to the file.");
+	      } catch (IOException e) {
+	        System.out.println("An error occurred.");
+	        e.printStackTrace();
+	      }
+
 			    
 		/* End of Program */
 		intGrabber.close();
