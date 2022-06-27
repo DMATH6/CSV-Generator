@@ -221,18 +221,31 @@ public class GenerateCSV {
 		//Seventh Operation	
 		//CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
 		//TEST FOR NOW 
+		String parserstrng = "null";
+		   try {
+			   
+		        FileWriter myWriter = new FileWriter("GeneratedCSV.csv");
+				//for (int i = 0; i <= customcolnum + customrownum; i++) {
+					
+					for(int i2 = 0; i2 <= customrownum; i2++) {
+					parserstrng = rowdata.get(i2).toString();
+				
+			        myWriter.write(parserstrng);
+			        myWriter.write(System.getProperty("line.separator"));
+			       
+				}
+				
+		        myWriter.close();//replace dosnt work
 
+		        System.out.println("Successfully wrote to the file.");
+		      } catch (IOException e) {
+		        System.out.println("An error occurred.");
+		        e.printStackTrace();
+		      }
+		   
+	
 
-	    try {
-	        FileWriter myWriter = new FileWriter("GeneratedCSV.csv");
-	        myWriter.write(rowdata + System.lineSeparator().replace('[', ']')); //replace dosnt work
-	        myWriter.close();
-	        System.out.println("Successfully wrote to the file.");
-	      } catch (IOException e) {
-	        System.out.println("An error occurred.");
-	        e.printStackTrace();
-	      }
-
+  
 			    
 		/* End of Program */
 		intGrabber.close();
