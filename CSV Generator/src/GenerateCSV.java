@@ -22,6 +22,9 @@ import java.util.Scanner;
 import java.io.FileReader;
 import java.io.*;  
 import java.lang.Object;
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+import java.util.stream.IntStream;
 public class GenerateCSV {
 
 
@@ -214,10 +217,35 @@ public class GenerateCSV {
 		}
 
 
+		//Get how many Generated Rows
 
+		int randomrowstotal = 0;
+		Random rnd = new Random();
+		System.out.println("Enter How Many Rows You Want Randomly Generated In Total");
+		try {
+			intGrabber = new Scanner(System.in);
+			randomrowstotal = intGrabber.nextInt();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			
+		}
+		ArrayList<ArrayList<String>> rowdatarnd = new ArrayList<ArrayList<String>>();
+		for(int i = 0; i <= randomrowstotal; i++) {
+
+			rowdatarnd.add(rowdata.get(rnd.nextInt(rowdata.size())));
+			
+		}
+		
+		
+		
 		//Fifth Operation: Displays all data entered for the selected row
-		System.out.println('\n' + "				" + rowdata);
+		System.out.println('\n' + "				" + rowdatarnd.toString());
 
+		
+		
+		
+		
 		//Seventh Operation	
 		//CSVWriter writer = new CSVWriter(new FileWriter("D://output.csv"));
 		//TEST FOR NOW 
@@ -225,10 +253,11 @@ public class GenerateCSV {
 		   try {
 			   
 		        FileWriter myWriter = new FileWriter("GeneratedCSV.csv");
-				//for (int i = 0; i <= customcolnum + customrownum; i++) {
-					
-					for(int i2 = 0; i2 <= customrownum; i2++) {
-					parserstrng = rowdata.get(i2).toString();
+				//for (int i = 0; i <= customcolnum + custom
+
+				
+					for(int i2 = 0; i2 <= randomrowstotal; i2++) {
+					parserstrng = rowdatarnd.get(i2).toString();
 				
 			        myWriter.write(parserstrng);
 			        myWriter.write(System.getProperty("line.separator"));
