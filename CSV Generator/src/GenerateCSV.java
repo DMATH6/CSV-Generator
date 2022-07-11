@@ -25,6 +25,7 @@ import java.lang.Object;
 import java.util.Random;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
+import java.util.Collections;
 public class GenerateCSV {
 
 
@@ -264,6 +265,11 @@ public class GenerateCSV {
 		} catch(NumberFormatException e) {
 			return false; // Wasn't integer
 		}
+	}
+
+	private static ArrayList<ArrayList<String>> shuffleArray(ArrayList<ArrayList<String>> arr) { //Shuffle 
+		Collections.shuffle(arr);
+		return arr;
 	}
 
 }//Class END
